@@ -1,0 +1,2 @@
+# JS Homework
+[CHANGELOG](CHANGELOG.md)

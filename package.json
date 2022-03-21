@@ -1,0 +1,14 @@
+{
+  "name": "js-homework",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Artem Nikolaev",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
