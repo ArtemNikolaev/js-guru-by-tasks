@@ -22,6 +22,8 @@ describe('tasks/js-api/array/map.js \n [].map', function() {
                 [].map(()=>{}),
             ),
         );
+        const testCase = [];
+
         assert.ok(
             testCase !== testCase.map(()=>{}),
         );
