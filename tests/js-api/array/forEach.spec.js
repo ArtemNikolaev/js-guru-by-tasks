@@ -5,8 +5,20 @@ describe.only('tasks/js-api/array/forEach.js \n [].forEach', function() {
     hooks();
 
     it('should throw if no cb', function() {
-        console.log(Array.prototype.forEach);
         assert.throws(() => [].forEach());
+    });
+
+    it('should return undefined', function() {
+        const testCases = [
+            [],
+            [1,2,3],
+            [0,1,2,3],
+            [Symbol()],
+        ]
+
+        for (let i = 0; i < testCases.length; i++) {
+            assert.equal(testCases[i].forEach(()=>{}), undefined);
+        }
     });
 
 /*
