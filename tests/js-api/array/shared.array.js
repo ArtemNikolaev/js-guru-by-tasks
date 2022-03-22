@@ -14,12 +14,18 @@ const prototypeMapping = (() => {
 
 module.exports = {
     hooks: () => {
-        beforeEach(function() {
+        beforeEach(function () {
             Object.assign(Array.prototype, selfWritedMapping);
         });
 
-        afterEach(function() {
+        afterEach(function () {
             Object.assign(Array.prototype, prototypeMapping);
         });
+    },
+    callTimes: function () {
+        let counter = 0;
+        return function() {
+            return counter++;
+        }
     }
 }

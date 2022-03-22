@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { hooks }= require('./shared.array');
+const { hooks, callTimes }= require('./shared.array');
 
 describe.only('tasks/js-api/array/forEach.js \n [].forEach', function() {
     hooks();
@@ -43,15 +43,23 @@ describe.only('tasks/js-api/array/forEach.js \n [].forEach', function() {
     });
 */
 
-/*
     it('thisArg should be context for cb', function() {
-        assert.deepEqual(
+        const testCases = [
+            [],
             [1,2,3],
-            [0,1,2].forEach(
-                function(el) { return el+this.x },
-                {x:1}
-            )
-        );
+            [0,1,2,3],
+            [Symbol()],
+        ]
+
+        for (let i = 0; i < testCases.length; i++) {
+            const counter = callTimes();
+            testCases[i].forEach(
+                function() { this.counter(); },
+                { counter },
+            );
+
+
+            assert.equal(counter(), testCases[i].length);
+        }
     });
-*/
 });
