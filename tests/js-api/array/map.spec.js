@@ -1,16 +1,8 @@
 const assert = require('assert');
-const map = require('../../../tasks/js-api/array/map');
-const {before, after, setMethod} = require('../../mocks/array.methods');
+const shared = require('./shared.array');
 
 describe('tasks/js-api/array/map.js \n [].map', function() {
-    beforeEach(function() {
-        before();
-        setMethod('map', map);
-    });
-
-    afterEach(function() {
-        after();
-    });
+    shared.hooks();
 
     it('should throw if no cb', function() {
         assert.throws(() => [].map());
