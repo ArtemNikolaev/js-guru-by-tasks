@@ -1,7 +1,7 @@
 const assert = require('assert');
 const { hooks, callTimes }= require('./shared.array');
 
-describe.only('tasks/js-api/array/forEach.js \n [].forEach', function() {
+describe('tasks/js-api/array/forEach.js \n [].forEach', function() {
     hooks();
 
     it('should throw if no cb', function() {
@@ -21,7 +21,7 @@ describe.only('tasks/js-api/array/forEach.js \n [].forEach', function() {
         }
     });
 
-    describe('cb', function() {
+    describe.only('cb', function() {
         it('should be called for every el', function () {
             const testCases = [
                 [],
