@@ -15,6 +15,7 @@ const prototypeMapping = (() => {
 module.exports = {
     hooks: () => {
         beforeEach(function() {
+            console.log(selfWritedMapping, require(`../../../tasks/js-api/array/forEach`));
             Object.assign(Array.prototype, selfWritedMapping);
         });
 
